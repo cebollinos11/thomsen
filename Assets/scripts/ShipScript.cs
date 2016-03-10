@@ -14,6 +14,8 @@ public class ShipScript : MonoBehaviour {
     private float CurrentForwardSpeed;
     public GameObject Particles;
 
+    int turbo;
+
 	// Use this for initialization
 	void Start () {
 
@@ -25,6 +27,7 @@ public class ShipScript : MonoBehaviour {
 
         CurrentGear = 2;
         ManageGears();
+        turbo = 1;
 
        
 	}
@@ -34,12 +37,21 @@ public class ShipScript : MonoBehaviour {
 
 
         Model.transform.eulerAngles = new Vector3(-R.velocity.y, Model.transform.eulerAngles.y, transform.eulerAngles.z-R.angularVelocity.y*100);
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            turbo = 10;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            turbo = 1;
+        }
         	
 	}
 
     public void GoUpDown(float dir)
     {
-        R.AddForce(transform.up * VerticalSpeed * dir);
+        R.AddForce(transform.up * VerticalSpeed * dir * Time.deltaTime * 100f);
 
         Debug.Log("pushing down");
         
@@ -99,27 +111,27 @@ public class ShipScript : MonoBehaviour {
     public void RotateX(float dir)
     {
 
-        R.AddTorque(transform.up * RotSpeed * dir);
+        R.AddTorque(transform.up * RotSpeed * dir * Time.deltaTime * 100f);
 
     }
 
     public void RotateZ(float dir)
     {
 
-        R.AddTorque(transform.right * RotSpeed * dir);
+        R.AddTorque(transform.right * RotSpeed * dir * Time.deltaTime * 100f);
 
     }
 
     public void RotateY(float dir)
     {
 
-        R.AddTorque(transform.forward * RotSpeed * dir);
+        R.AddTorque(transform.forward * RotSpeed * dir * Time.deltaTime * 100f);
 
     }
 
     void FixedUpdate()
     {
-        R.AddForce(transform.forward * CurrentForwardSpeed);
+        R.AddForce(transform.forward * CurrentForwardSpeed * Time.deltaTime * 100f *  turbo);
         
         
     }

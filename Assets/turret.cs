@@ -8,21 +8,54 @@ public class turret : MonoBehaviour {
     public float FireRate;
     public GameObject barrel;
 
+    bool playerInRange;
+
     void Start() {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("FuturePoint").transform;
 
         StartCoroutine(handleFire());
+    }
+
+    void OnTriggerEnter(Collider col) {
+
+
+        if (col.gameObject.tag == "Player")
+        {
+            playerInRange = true;
+        }
+
+
+    
+    }
+
+
+    void OnTriggerExit(Collider col)
+    {
+
+
+        if (col.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
+
+
+
     }
 	
 	// Update is called once per frame
 	void Update () {
+        
         transform.LookAt(player);
 	}
 
 
     void CheckIfCanShoot() {
 
-        Instantiate(missile,barrel.transform.position,barrel.transform.rotation);
+        if (playerInRange)
+        {
+            Instantiate(missile, barrel.transform.position, barrel.transform.rotation);
+        }
+        
     
     }
 
