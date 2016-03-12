@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour {
 	
 	}
 
-    void WinGame() { 
-    
+    IEnumerator WinGame() {
+
+        yield return new WaitForSeconds(4f);
+        Application.LoadLevel(1);
     
     }
 
@@ -21,9 +23,9 @@ public class GameManager : MonoBehaviour {
         collectedCakes++;
         Object.FindObjectOfType<candleCounter>().SetCandles(collectedCakes);
 
-        if (collectedCakes > 26)
+        if (collectedCakes > 0)
         {
-            WinGame();
+            StartCoroutine( WinGame());
         }
     
     }
