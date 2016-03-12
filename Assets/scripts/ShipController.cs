@@ -5,10 +5,19 @@ public class ShipController : MonoBehaviour {
 
     private ShipScript SS; //ship Script
 
+    public float sandwichTime;
+
+    public GameObject GliderGO;
+    public GameObject SandwichGO;
+
 	// Use this for initialization
 	void Start () {
 
         SS = GetComponent<ShipScript>();
+
+        SandwichGO.SetActive(false);
+
+       
         
 	}
 	
@@ -26,8 +35,26 @@ public class ShipController : MonoBehaviour {
 
         }
 
+        if (Input.GetKeyDown(KeyCode.O)) {
+            TurnIntoSandwich();
+        }
+
 	
 	}
 
+    void TurnIntoSandwich() {
+
+        StartCoroutine(Convert());
+    
+    }
+
+    IEnumerator Convert() {
+        SandwichGO.SetActive(true);
+        GliderGO.SetActive(false);
+        yield return new WaitForSeconds(sandwichTime);
+        GliderGO.SetActive(true);
+        SandwichGO.SetActive(false);
+    
+    }
   
 }
