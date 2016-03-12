@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
         collectedCakes++;
         Object.FindObjectOfType<candleCounter>().SetCandles(collectedCakes);
 
-        if (collectedCakes > 0)
+        if (collectedCakes > 26)
         {
             StartCoroutine( WinGame());
         }

@@ -753,7 +753,7 @@ MonoBehaviour:
   SandwichGO: {fileID: 120546}
   TurnIntoSandwichSFX: {fileID: 8300000, guid: 71a180aecd22447469776fb497a8d924, type: 3}
   TurnIntoGliderSFX: {fileID: 8300000, guid: 4de2a4ab890fd9b4f8c4037bab6239a3, type: 3}
-  soundFrancesco: {fileID: 0}
+  soundFrancesco: {fileID: 8300000, guid: 837c167114f5af64c94ae555dd25d088, type: 3}
 --- !u!114 &11469176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -767,12 +767,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForwardSpeed: 50000
   RotSpeed: 500
-  VerticalSpeed: 30000
+  VerticalSpeed: 60000
   Gears: 2
   Model: {fileID: 181330}
   Particles: {fileID: 162960}
   camera: {fileID: 2061766}
-  boostFX: {fileID: 8300000, guid: 4cf69a18cc52b7f4a919d2917c95324f, type: 3}
+  boostFX: {fileID: 8300000, guid: 4dec568e154b72e49a70b0653ab4f2e0, type: 3}
 --- !u!114 &11483608
 MonoBehaviour:
   m_ObjectHideFlags: 1
