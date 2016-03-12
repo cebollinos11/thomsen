@@ -14,6 +14,8 @@ public class ShipScript : MonoBehaviour {
     private float CurrentForwardSpeed;
     public GameObject Particles;
 
+    public Camera camera;
+
     int turbo;
 
 	// Use this for initialization
@@ -40,11 +42,13 @@ public class ShipScript : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             turbo = 10;
+            camera.fieldOfView = 55f;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             turbo = 1;
+            camera.fieldOfView = 60f;
         }
         	
 	}
