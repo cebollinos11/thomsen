@@ -228,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 99, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children: []
   m_Father: {fileID: 452388}
@@ -239,9 +239,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120546}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: .439999998, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 20, y: 20, z: 45}
   m_Children: []
   m_Father: {fileID: 457130}
   m_RootOrder: 1
@@ -301,8 +301,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 196398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 770.799988, y: 132.5, z: 1102.80005}
+  m_LocalRotation: {x: 0, y: .11134278, z: 0, w: .993782043}
+  m_LocalPosition: {x: 788.299988, y: 132.5, z: 1257.09998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 484452}
@@ -431,7 +431,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: fac1b2826346fc44e8f355514543a061, type: 2}
+  - {fileID: 2100000, guid: 78debd5773ea2794aada8cf301fd60f4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -544,7 +544,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120546}
-  m_Mesh: {fileID: 4300000, guid: 0414be1f42d40944e8b993d169d51b36, type: 3}
+  m_Mesh: {fileID: 4300002, guid: cc4a684ea76d79f4f8f9f1438ce674ad, type: 3}
 --- !u!33 &3366854
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -748,9 +748,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b846f40ed9393b547a5695306b80e0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sandwichTime: 3
+  sandwichTime: 5
   GliderGO: {fileID: 154138}
   SandwichGO: {fileID: 120546}
+  TurnIntoSandwichSFX: {fileID: 8300000, guid: 71a180aecd22447469776fb497a8d924, type: 3}
+  TurnIntoGliderSFX: {fileID: 8300000, guid: 4de2a4ab890fd9b4f8c4037bab6239a3, type: 3}
+  soundFrancesco: {fileID: 0}
 --- !u!114 &11469176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -769,6 +772,7 @@ MonoBehaviour:
   Model: {fileID: 181330}
   Particles: {fileID: 162960}
   camera: {fileID: 2061766}
+  boostFX: {fileID: 8300000, guid: 4cf69a18cc52b7f4a919d2917c95324f, type: 3}
 --- !u!114 &11483608
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -48,7 +48,7 @@ GameObject:
   - 65: {fileID: 6597890}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 191716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 20}
+  m_LocalScale: {x: 100, y: 100, z: 200}
   m_Children: []
   m_Father: {fileID: 496878}
   m_RootOrder: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194792}
   m_LocalRotation: {x: 0, y: .712074637, z: 0, w: .702103853}
-  m_LocalPosition: {x: -40.5999985, y: 28.7000008, z: 101.599998}
+  m_LocalPosition: {x: 884.50531, y: 79.4000015, z: 1395.44055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414426}
@@ -101,7 +101,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 78debd5773ea2794aada8cf301fd60f4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -121,7 +121,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 191716}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300002, guid: cc4a684ea76d79f4f8f9f1438ce674ad, type: 3}
 --- !u!54 &5488590
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -159,7 +159,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 20}
+  m_Size: {x: 15, y: 15, z: 25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11448272
 MonoBehaviour:
@@ -1302,6 +1302,18 @@ Prefab:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Missile
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: cc4a684ea76d79f4f8f9f1438ce674ad, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78debd5773ea2794aada8cf301fd60f4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194792}

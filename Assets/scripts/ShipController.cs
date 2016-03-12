@@ -10,12 +10,22 @@ public class ShipController : MonoBehaviour {
     public GameObject GliderGO;
     public GameObject SandwichGO;
 
+    public AudioClip TurnIntoSandwichSFX;
+    public AudioClip TurnIntoGliderSFX;
+    public AudioClip soundFrancesco;
+
+    private GameObject Francesco;
+    
+
 	// Use this for initialization
 	void Start () {
 
         SS = GetComponent<ShipScript>();
 
         SandwichGO.SetActive(false);
+
+        Francesco = GameObject.FindGameObjectWithTag("Francesco");
+        Francesco.SetActive(false);
 
        
         
@@ -49,11 +59,29 @@ public class ShipController : MonoBehaviour {
     }
 
     IEnumerator Convert() {
+
+        AudioManager.PlaySpecific(TurnIntoSandwichSFX);
+        AudioManager.PlaySpecific(soundFrancesco);
+
         SandwichGO.SetActive(true);
         GliderGO.SetActive(false);
+        Francesco.SetActive(true);
         yield return new WaitForSeconds(sandwichTime);
+        AudioManager.PlaySpecific(TurnIntoGliderSFX);
         GliderGO.SetActive(true);
         SandwichGO.SetActive(false);
+        Francesco.SetActive(false);
+    
+    }
+
+    void OnCollisionEnter(Collision other) {
+
+        Debug.Log(other.gameObject.name);
+
+        if (other.gameObject.tag == "Missile")
+        {
+            TurnIntoSandwich();
+        }
     
     }
   

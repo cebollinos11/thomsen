@@ -3,6 +3,8 @@ using System.Collections;
 
 public class candle : MonoBehaviour {
 
+    public AudioClip pickup;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,6 +21,7 @@ public class candle : MonoBehaviour {
 
         if (col.gameObject.tag == "Player")
         {
+            AudioManager.PlaySpecific(pickup);
             Object.FindObjectOfType<GameManager>().CollectCake();
             Destroy(this.gameObject);
         }

@@ -10,6 +10,8 @@ public class turret : MonoBehaviour {
 
     bool playerInRange;
 
+    public AudioClip shootSound;
+
     void Start() {
         player = GameObject.FindGameObjectWithTag("FuturePoint").transform;
 
@@ -53,6 +55,7 @@ public class turret : MonoBehaviour {
 
         if (playerInRange)
         {
+            AudioManager.PlaySpecific(shootSound);
             Instantiate(missile, barrel.transform.position, barrel.transform.rotation);
         }
         

@@ -28,7 +28,7 @@ public class missile : MonoBehaviour {
     {
         
 
-        Debug.Log(rb.velocity);
+        
 
         lifeTime -= Time.deltaTime;
         if (lifeTime < 0)

@@ -16,6 +16,7 @@ public class ShipScript : MonoBehaviour {
 
     public Camera camera;
 
+    public AudioClip boostFX;
     int turbo;
 
 	// Use this for initialization
@@ -41,8 +42,9 @@ public class ShipScript : MonoBehaviour {
         Model.transform.eulerAngles = new Vector3(-R.velocity.y, Model.transform.eulerAngles.y, transform.eulerAngles.z-R.angularVelocity.y*100);
 
         if (Input.GetKeyDown(KeyCode.Space)) {
+            AudioManager.PlaySpecific(boostFX);
             turbo = 10;
-            camera.fieldOfView = 55f;
+            camera.fieldOfView = 70f;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -57,7 +59,7 @@ public class ShipScript : MonoBehaviour {
     {
         R.AddForce(transform.up * VerticalSpeed * dir * Time.deltaTime * 100f);
 
-        Debug.Log("pushing down");
+      
         
         
     
