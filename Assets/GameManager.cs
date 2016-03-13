@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     IEnumerator WinGame() {
 
         yield return new WaitForSeconds(4f);
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     
     }
 
