@@ -5,6 +5,7 @@ public class presentationscript : MonoBehaviour {
 
     public GameObject name;
     public GameObject thomsen;
+    public GameObject attention;
     int status;
 
 	// Use this for initialization
@@ -12,6 +13,7 @@ public class presentationscript : MonoBehaviour {
 
         name.SetActive(false);
         thomsen.SetActive(false);
+        attention.SetActive(false);
 	
 	}
 	
@@ -21,9 +23,16 @@ public class presentationscript : MonoBehaviour {
 
         if (Input.anyKeyDown)
         {
-            if (status == 2)
+            if (status == 3)
             {
                 Application.LoadLevel(1);
+            }
+
+            if (status == 2)
+            {
+                status = 3;
+                thomsen.SetActive(false);
+                attention.SetActive(true);
             }
 
             if (status == 1)
